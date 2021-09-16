@@ -25,14 +25,16 @@
 
                     <!-- input con tasto per aggiungere oggetti  -->
                     <div class="d-flex align-items-center mb-5">
-                        <input type="text" v-model="addItem" id="add-item" placeholder="Aggiungi alla lista della spesa">
-                        <button class="btn btn-success" id="my_btn">Aggiungi</button>
+                        <input @keyup.enter="addItemFunction" type="text" v-model="addItem" id="add-item" placeholder="Aggiungi alla lista della spesa">
+                        <button @click="addItemFunction" class="btn btn-success" id="my_btn">Aggiungi</button>
                     </div>
 
+                    <p id="error-add" v-if="errorInsert">Hai già inserito questo prodotto</p>
+
                     <!-- lista oggetti spesa  -->
-                    <div v-for="(item, index) in listaSpesa" class="d-flex list-item">
+                    <div v-for="(item, index) in listItem" class="d-flex list-item">
                         {{ index + 1 }} - {{ item }}
-                        <span id="delete-item">&cross;</span>
+                        <span @click="deleteItem(index)" id="delete-item">&cross;</span>
                     </div>
                 </div>
             </div>
