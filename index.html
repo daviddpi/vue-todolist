@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- link Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>Vue Todolist</title>
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Lista della spesa:</h1>
+
+                    <!-- input con tasto per aggiungere oggetti  -->
+                    <div class="d-flex align-items-center mb-5">
+                        <input type="text" v-model="addItem" id="add-item" placeholder="Aggiungi alla lista della spesa">
+                        <button class="btn btn-success" id="my_btn">Aggiungi</button>
+                    </div>
+
+                    <!-- lista oggetti spesa  -->
+                    <div v-for="(item, index) in listaSpesa" class="d-flex list-item">
+                        {{ index + 1 }} - {{ item }}
+                        <span id="delete-item">&cross;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/myscript.js"></script>
+</body>
+</html>
