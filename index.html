@@ -34,7 +34,7 @@
                     <!-- lista oggetti spesa  -->
                     <div v-for="(item, index) in listItem" class="d-flex list-item">
                         {{ index + 1 }} - {{ item }}
-                        <span @click="deleteItem(index)" id="delete-item">&cross;</span>
+                        <span @click="deleteItem(index)" class="delete-item">&cross;</span>
                     </div>
                 </div>
             </div>
